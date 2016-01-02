@@ -11,3 +11,10 @@ for x in range (1, 11):
         print ('Eleven thrown')
     if throw_1 == throw_2:
         print ('Double thrown')
+    if not (total <5 or total >9):
+        print ('not bad')
+    if total > 10:
+        print('Good Throw!')
+    if total < 4:
+        print('Unlucky!')
+        
