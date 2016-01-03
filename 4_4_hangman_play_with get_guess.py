@@ -34,11 +34,39 @@ def print_word_with_blanks(word):
     print (display_word)
 
 def process_guess(guess,word):
-    global lives_remaining
+    if len(guess) > 1:
+        return whole_word_guess(guess, word)
+    else:
+        return single_letter_guess(guess,word)
+        global lives_remaining
     global guessed_letters
     lives_remaining = lives_remaining - 1
     guessed_letters = guessed_letters + guess
     return False
+
+def single_letter_guess(guess, word):
+    global guessed_letters
+    global lives_remaining
+    if word.find(guess) == -1:
+        #word guess was incorrect
+        lives_remaining = lives_remaining - 1
+    guessed_letters = guessed_letters + guess
+    if all_letters_guessed(word):
+        return True
+
+def all_letters_guessed(word):
+    for letter in word:
+        if guessed_letters.find(letter) == - 1:
+            return False
+    return True
+
+def whole_word_guess(guess, word):
+    global lives_remaining
+    if guess.lower() == word.lower():
+        return True
+    else:
+        lives_remaining = lives_remaining - 1
+        return False
 
 def pick_a_word():
 	return random.choice(words)
