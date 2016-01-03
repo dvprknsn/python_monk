@@ -1,4 +1,5 @@
-#4_4_hangman_play_with get_guess
+#4_4_hangman_working
+
 import random
 words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
 lives_remaining = 14
