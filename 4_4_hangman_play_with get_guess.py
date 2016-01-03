@@ -2,6 +2,7 @@
 import random
 words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
 lives_remaining = 14
+guessed_letters = ''
 
 def play():
     word = pick_a_word()
@@ -22,11 +23,21 @@ def get_guess(word):
     return guess
 
 def print_word_with_blanks(word):
-    print('print_word_with_blanks: not done yet')
+    display_word = ''
+    for letter in word:
+        if guessed_letters.find(letter) > -1:
+            #letter found
+            display_word = display_word + letter
+        else:
+            #letter not found
+            display_word = display_word + '-'
+    print (display_word)
 
 def process_guess(guess,word):
     global lives_remaining
+    global guessed_letters
     lives_remaining = lives_remaining - 1
+    guessed_letters = guessed_letters + guess
     return False
 
 def pick_a_word():
