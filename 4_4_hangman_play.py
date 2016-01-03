@@ -1,4 +1,8 @@
 #4_4_hangman_play
+import random
+words = ['chicken', 'dog', 'cat', 'mouse', 'frog']
+lives_remaining = 14
+
 def play():
     word = pick_a_word()
     while True:
@@ -18,3 +22,9 @@ def process_guess(guess,word):
     global lives_remaining
     lives_remaining = lives_remaining - 1
     return False
+
+def pick_a_word():
+	return random.choice(words)
+
+	
+play()
