@@ -21,6 +21,9 @@ def get_guess(word):
     guess = input(' Guess a letter or a whole word?')
     return guess
 
+def print_word_with_blanks(word):
+    print('print_word_with_blanks: not done yet')
+
 def process_guess(guess,word):
     global lives_remaining
     lives_remaining = lives_remaining - 1
