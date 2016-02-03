@@ -12,6 +12,6 @@ class ScaleConverter:
         return value * self.factor
 
 cl = ScaleConverter('inches', 'mm', 25)
-print (cl.description)
+print (cl.description())
 print ('converting 2 inches')
 print (str(cl.convert(2)) + cl.units_to)
