@@ -2,3 +2,7 @@ apples
 pears
 grapes
 passion fruit
+melons
+raspberries
+blueberries
+

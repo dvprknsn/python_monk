@@ -1,9 +1,12 @@
 #04_09_hangman_full_solution
 import random
-
-f=open('hangman_words.txt')
-words=f.read().splitlines()
-f.close()
+try:
+        f=open('hangman_words.txt')
+        words=f.read().splitlines()
+        f.close()
+except IOError:
+        print ("Cannot find file ")
+        exit()
 lives_remaining = 14
 guessed_letters = ''
 
@@ -14,7 +17,7 @@ def play():
 	while True:
 		guess = get_guess(word)
 		if process_guess(guess, word):
-			print('You win! Well Done!')
+			print('The word was: "' + word + '". You win! Well Done!')
 			break
 		if lives_remaining == 0:
 			print('You are Hung!')
