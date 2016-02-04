@@ -1,11 +1,12 @@
 #04_09_hangman_full_solution
 import random
+words_file = 'hangman_words.txt'
 try:
-        f=open('hangman_words.txt')
+        f=open(words_file)
         words=f.read().splitlines()
         f.close()
 except IOError:
-        print ("Cannot find file ")
+        print ("Cannot find file: " + words_file)
         exit()
 lives_remaining = 14
 guessed_letters = ''
