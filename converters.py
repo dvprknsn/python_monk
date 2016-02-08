@@ -20,4 +20,3 @@ class ScaleAndOffsetConverter(ScaleConverter):
 		
 	def convert(self, value):
 		return value * self.factor + self.offset
-
