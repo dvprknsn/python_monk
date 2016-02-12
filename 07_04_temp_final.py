@@ -7,16 +7,25 @@ class App:
 
     def __init__(self, master):
         self.t_conv = ScaleAndOffsetConverter('C', 'F', 1.8, 32)
+#create an instance of ScaleAndOffset converter
+
         frame = Frame(master)
         frame.pack()
         Label(frame, text='deg C').grid(row=0, column=0)
         self.c_var = DoubleVar()
+#make a variable to hold the user entered value
+
         Entry(frame, textvariable=self.c_var).grid(row=0, column=1)
+#make an entry prompt
+        
         Label(frame, text='deg F').grid(row=1, column=0)
         self.result_var = DoubleVar()
+#make a variable to hold the result of the conversion
+        
         Label (frame, textvariable=self.result_var).grid(row=1, column=1)
         button = Button(frame, text='Convert', command=self.convert)
         button.grid(row=2, columnspan=2)
+        
 
     def convert(self):
         c = self.c_var.get()
