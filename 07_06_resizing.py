@@ -6,6 +6,9 @@ class App:
 
     def __init__(self, master):
         frame = Frame(master)
+        #frame.pack(fill=BOTH,expand=1) ensures that
+        #the frame will fill the root window so that when
+        #the window changes size, so does the frame (column 1?)
         frame.pack(fill=BOTH,expand=1)
         #Listbox
         listbox = Listbox(frame)
