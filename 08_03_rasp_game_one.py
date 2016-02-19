@@ -1,6 +1,7 @@
 #08_03_rasp_game_one.py
 
 import pygame
+import random
 from pygame.locals import *
 from sys import exit
 screen_width = 600
@@ -18,6 +19,7 @@ spoon = pygame.image.load('spoon.jpg').convert()
 
 raspberry = pygame.image.load('raspberry.jpg').convert()
 
+
 def update_spoon():
     global spoon_x
     global spoon_y
@@ -31,12 +33,13 @@ def update_raspberry():
     if raspberry_y > spoon_y:
         raspberry_y = 0
         raspberry_x = random.randint(10, screen_width)
-    raspberry_x += random_randint(-5,5)
+    raspberry_x += random.randint(-5,5)
     if raspberry_x < 10:
         raspberry_x = 10
     if raspberry_x > screen_width - 20:
         raspberry_x = screen_width - 20
-    screen.blit(raspberry, (raspberry_x, raspberry_y)
+    screen.blit(raspberry, (raspberry_x, raspberry_y))
+
 
 
 while True:
@@ -47,5 +50,8 @@ while True:
 
     screen.fill((255,255,255))
     update_spoon()
+    update_raspberry()
 
     pygame.display.update()
+
+
