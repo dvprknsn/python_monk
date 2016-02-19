@@ -5,6 +5,7 @@ import random
 from pygame.locals import *
 from sys import exit
 screen_width = 600
+score = 0
 spoon_x = 300
 spoon_y = 300
 raspberry_x = 300
@@ -40,7 +41,20 @@ def update_raspberry():
         raspberry_x = screen_width - 20
     screen.blit(raspberry, (raspberry_x, raspberry_y))
 
+def display(message):
+    font = pygame.font.Font(None, 36)
+    text = font.render(message, 1, (10,10,10))
+    screen.blit(text, (0,0))
+    
 
+def check_for_catch():
+    global score
+    if raspberry_y >= spoon_y -1 and raspberry_x >= spoon_x -30  and \
+       raspberry_x < spoon_x + 20:
+        score +=1
+    display("Score: " + str(score))
+
+clock = pygame.time.Clock()
 
 while True:
 
@@ -51,7 +65,9 @@ while True:
     screen.fill((255,255,255))
     update_spoon()
     update_raspberry()
+    check_for_catch()
 
     pygame.display.update()
+    clock.tick(30)
 
 
